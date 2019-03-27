@@ -40,52 +40,42 @@
         <type>Default</type>
     </actionOverrides>
     <fields>
-        <fullName>SBQQ__Localization__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <deprecated>false</deprecated>
+        <fullName>TomQuote__c</fullName>
         <externalId>false</externalId>
-        <label>Localization</label>
-        <referenceTo>SBQQ__Localization__c</referenceTo>
-        <relationshipLabel>Search Index</relationshipLabel>
-        <relationshipName>Search_Index</relationshipName>
-        <required>false</required>
+        <label>TomQuote</label>
+        <referenceTo>TomQuote__c</referenceTo>
+        <relationshipLabel>TomQuoteLine</relationshipLabel>
+        <relationshipName>TomQuoteLine</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
         <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>SBQQ__Value__c</fullName>
-        <deprecated>false</deprecated>
-        <externalId>false</externalId>
-        <label>Value</label>
-        <length>130000</length>
-        <trackTrending>false</trackTrending>
-        <type>LongTextArea</type>
-        <visibleLines>3</visibleLines>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
     <enableReports>false</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <label>Search Index</label>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <label>TomQuoteLine</label>
     <nameField>
-        <displayFormat>{0}</displayFormat>
-        <label>Name</label>
-        <type>AutoNumber</type>
+        <label>TomQuoteLine Name</label>
+        <type>Text</type>
     </nameField>
-    <pluralLabel>Search Index</pluralLabel>
+    <pluralLabel>TomQuoteLine</pluralLabel>
     <searchLayouts />
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>
     <listViews>
-        <fullName>SBQQ__All</fullName>
+        <fullName>All</fullName>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>

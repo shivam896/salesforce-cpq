@@ -39,53 +39,31 @@
         <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
-    <fields>
-        <fullName>SBQQ__Favorite__c</fullName>
-        <deprecated>false</deprecated>
-        <externalId>false</externalId>
-        <label>Favorite</label>
-        <referenceTo>SBQQ__Favorite__c</referenceTo>
-        <relationshipLabel>Favorite Shares</relationshipLabel>
-        <relationshipName>FavoriteShares</relationshipName>
-        <relationshipOrder>0</relationshipOrder>
-        <reparentableMasterDetail>false</reparentableMasterDetail>
-        <trackTrending>false</trackTrending>
-        <type>MasterDetail</type>
-        <writeRequiresMasterRead>false</writeRequiresMasterRead>
-    </fields>
-    <fields>
-        <fullName>SBQQ__User__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <deprecated>false</deprecated>
-        <externalId>false</externalId>
-        <label>User</label>
-        <referenceTo>User</referenceTo>
-        <relationshipName>FavoriteShares</relationshipName>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <customHelpPage>SBQQ__FavoritesHelp</customHelpPage>
     <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
     <enableReports>false</enableReports>
-    <enableSearch>false</enableSearch>
+    <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <label>Favorite Share</label>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <label>TomQuote</label>
     <nameField>
-        <displayFormat>F-{0}</displayFormat>
-        <label>Favorite Share Name</label>
-        <type>AutoNumber</type>
+        <label>TomQuote Name</label>
+        <type>Text</type>
     </nameField>
-    <pluralLabel>Favorite Shares</pluralLabel>
+    <pluralLabel>TomQuote</pluralLabel>
     <searchLayouts />
-    <sharingModel>ControlledByParent</sharingModel>
+    <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
 </CustomObject>

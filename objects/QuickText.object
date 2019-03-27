@@ -39,6 +39,10 @@
         <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
+    <actionOverrides>
+        <actionName>Share</actionName>
+        <type>Default</type>
+    </actionOverrides>
     <fields>
         <fullName>Category</fullName>
         <trackHistory>false</trackHistory>
@@ -78,5 +82,5 @@
         <searchResultsAdditionalFields>Category</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Channel</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>Private</sharingModel>
+    <sharingModel>ReadWrite</sharingModel>
 </CustomObject>

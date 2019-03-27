@@ -343,9 +343,116 @@
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
+    <fields>
+        <fullName>sbaa__ApprovalStatus__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Overall Approval Status for this Opportunity</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Overall Approval Status for this Opportunity</inlineHelpText>
+        <label>Approval Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                    <label>Pending</label>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+                <value>
+                    <fullName>Recalled</fullName>
+                    <default>false</default>
+                    <label>Recalled</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>sbaa__ApprovalStep__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used with Native Approvals to indicate the step in the approval process this Opportunity is in</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used with Native Approvals to indicate the step in the approval process this Opportunity is in</inlineHelpText>
+        <label>Approval Step</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sbaa__Approver__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Used with Native Approvers; indicates which Approver is responsible for approving the Opportunity.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used with Native Approvers; indicates which Approver is responsible for approving the Opportunity.</inlineHelpText>
+        <label>Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Opportunities</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>sbaa__StepApproved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Used with Native Approvals; to indicate whether the step has been approved</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used with Native Approvals; to indicate whether the step has been approved</inlineHelpText>
+        <label>Step Approved</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>sbaa__SubmittedDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date when record was submitted for approval</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date when record was submitted for approval</inlineHelpText>
+        <label>Submitted Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>sbaa__SubmittedUser__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>User requesting approval for the Opportunity.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>User requesting approval for the Opportunity.</inlineHelpText>
+        <label>Submitted User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>SubmittedUserOpportunities</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>true</enableFeeds>
     <enableHistory>false</enableHistory>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <searchLayouts>
         <customTabListAdditionalFields>OPPORTUNITY.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
@@ -364,6 +471,31 @@
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
+    <fieldSets>
+        <fullName>sbaa__DealDesk</fullName>
+        <description>Fields displayed on Deal Desk page.</description>
+        <displayedFields>
+            <field>AccountId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Amount</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CloseDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>StageName</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Deal Desk</label>
+    </fieldSets>
     <listViews>
         <fullName>AllOpportunities</fullName>
         <filterScope>Everything</filterScope>
@@ -523,5 +655,49 @@
         <openType>sidebar</openType>
         <page>SBQQ__NewOpportunityRelatedContent</page>
         <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>sbaa__PreviewApprovals</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Preview Approvals</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>../apex/SBAA__PreviewApprovals?id={!Opportunity.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>sbaa__RecallApprovals</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>page</linkType>
+        <masterLabel>Recall Approvals</masterLabel>
+        <openType>replace</openType>
+        <page>sbaa__RecallOpportunity</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>sbaa__ResendRequestEmail</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Resend Request</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/SBAA__ListRequests?id={!Opportunity.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>sbaa__SubmitForApproval</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Submit for Approval</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>this.disabled = true;
+this.className = 'btnDisabled';
+window.location='./apex/SBAA__SubmitOpportunity?Id={!Opportunity.Id}';</url>
     </webLinks>
 </CustomObject>
